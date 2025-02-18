@@ -1,0 +1,22 @@
+{
+  "zone_id": {
+    "description": "The zone used to launch this module resources.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动此模块资源的区域。",
+      "en-US": "The zone used to launch this module resources."
+    },
+    "default": ""
+  },
+  "name": {
+    "description": "The specification of module name.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "模块名称的规范。",
+      "en-US": "The specification of module name."
+    },
+    "default": "iac-tf-ecs-cluster"
+  }
+}

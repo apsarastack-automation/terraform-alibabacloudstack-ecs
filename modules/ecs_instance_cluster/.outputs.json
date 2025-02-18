@@ -1,0 +1,65 @@
+{
+  "ids": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "availability_zone": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "vswitch_id": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "security_group_ids": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "key_name": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "image_id": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "instance_type": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "private_ips": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "disk_category": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  }
+}
