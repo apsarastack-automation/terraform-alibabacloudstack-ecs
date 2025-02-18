@@ -8,3 +8,4 @@
 **/.terraform
 **/.terraform.lock.hcl
 **/*.tfstate
+**/.provider_schema.json
