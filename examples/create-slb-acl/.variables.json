@@ -1,0 +1,12 @@
+{
+  "name": {
+    "description": "",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    },
+    "default": "tf-example-module-slb-acl"
+  }
+}
