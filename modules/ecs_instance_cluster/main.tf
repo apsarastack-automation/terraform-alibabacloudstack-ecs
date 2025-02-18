@@ -63,21 +63,24 @@ resource "alibabacloudstack_security_group" "default" {
 
 
 resource "alibabacloudstack_instance" "default" {
-  count                = var.cluster_size
-  image_id             = var.image_id == "" ? length(data.alibabacloudstack_images.default.images) > 0 ? data.alibabacloudstack_images.default.images[0].id : "ubuntu_18_04_64_20G_alibase_20190624.vhd" : var.image_id
-  instance_type        = var.instance_type == "" ? data.alibabacloudstack_instance_types.default.instance_types[0].id : var.instance_type
-  security_groups      = length(var.security_group_ids) > 0 ? var.security_group_ids : [alibabacloudstack_security_group.default[0].id]
-  instance_name        = var.cluster_size < 2 ? var.name : format("%s-%s", var.name, count.index + 1)
-  system_disk_category = local.disk_category
-  system_disk_size     = "40"
-  password             = var.password
-  vswitch_id           = length(var.vswtich_id) > 0 ? var.vswtich_id : alibabacloudstack_vswitch.this.0.id
-  user_data            = var.user_data
-  key_name             = var.key_name
-  tags = {
-    created_by   = var.instance_tags["created_by"]
-    created_from = var.instance_tags["created_from"]
-  }
+  count                         = var.cluster_size
+  image_id                      = var.image_id == "" ? length(data.alibabacloudstack_images.default.images) > 0 ? data.alibabacloudstack_images.default.images[0].id : "ubuntu_18_04_64_20G_alibase_20190624.vhd" : var.image_id
+  instance_type                 = var.instance_type == "" ? data.alibabacloudstack_instance_types.default.instance_types[0].id : var.instance_type
+  security_groups               = length(var.security_group_ids) > 0 ? var.security_group_ids : [alibabacloudstack_security_group.default[0].id]
+  instance_name                 = var.cluster_size < 2 ? var.name : format("%s-%s", var.name, count.index + 1)
+  host_name                     = var.host_name
+  description                   = var.description
+  system_disk_category          = local.disk_category
+  system_disk_size              = var.system_disk_size
+  kms_encrypted_password        = var.kms_encrypted_password
+  kms_encryption_context        = var.kms_encryption_context
+  password                      = var.password
+  vswitch_id                    = length(var.vswtich_id) > 0 ? var.vswtich_id : alibabacloudstack_vswitch.this.0.id
+  user_data                     = var.user_data
+  role_name                     = var.role_name
+  key_name                      = var.key_name
+  security_enhancement_strategy = var.security_enhancement_strategy
+  tags                          = var.instance_tags
 }
 
 

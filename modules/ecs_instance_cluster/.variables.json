@@ -168,5 +168,85 @@
       "en-US": "The system disk category used to launch one or more ECS instances."
     },
     "default": ""
+  },
+  "description": {
+    "description": "The specification of module description.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "模块描述的规范。",
+      "en-US": "The specification of module description."
+    },
+    "default": "tf-ecs-instance-description"
+  },
+  "role_name": {
+    "description": "Instance RAM role name. The name is provided and maintained by RAM. You can use 'alibabacloudstack_ram_role' to create a new one.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "实例RAM角色名称。名称由RAM提供并维护。您可以使用'alibabacloudstack_ram_role'创建一个新的。",
+      "en-US": "Instance RAM role name. The name is provided and maintained by RAM. You can use 'alibabacloudstack_ram_role' to create a new one."
+    },
+    "default": ""
+  },
+  "host_name": {
+    "description": "Host name used on all instances as prefix. Like if the value is TF-ECS-Host-Name and then the final host name would be TF-ECS-Host-Name001, TF-ECS-Host-Name002 and so on.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "在所有实例中用作前缀的主机名。例如，如果值是TF-ECS-Host-Name，那么最终的主机名将是TF-ECS-Host-Name001、TF-ECS-Host-Name002等。",
+      "en-US": "Host name used on all instances as prefix. For example, if the value is TF-ECS-Host-Name, then the final host names would be TF-ECS-Host-Name001, TF-ECS-Host-Name002, and so on."
+    },
+    "default": "iac-tf-ecs-instance-host"
+  },
+  "kms_encrypted_password": {
+    "description": "An KMS encrypts password used to an instance. It is conflicted with 'password'.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "An KMS加密了用于实例的密码。它与'password'冲突。",
+      "en-US": "An KMS encrypts password used for an instance. It conflicts with 'password'."
+    },
+    "default": ""
+  },
+  "security_enhancement_strategy": {
+    "description": "The security enhancement strategy.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "安全增强策略。",
+      "en-US": "The security enhancement strategy."
+    },
+    "default": "Active"
+  },
+  "tags": {
+    "description": "A mapping of tags to assign to the resource.",
+    "type": "map(string)",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "要分配给资源的标签映射。",
+      "en-US": "A mapping of tags to assign to the resource."
+    },
+    "default": "{}"
+  },
+  "kms_encryption_context": {
+    "description": "An KMS encryption context used to decrypt 'kms_encrypted_password' before creating or updating an instance with 'kms_encrypted_password'.",
+    "type": "map(string)",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于在创建或更新实例之前解密'kms_encrypted_password'的KMS加密上下文。",
+      "en-US": "An KMS encryption context used to decrypt kms_encrypted_password before creating or updating an instance with kms_encrypted_password."
+    },
+    "default": "{}"
+  },
+  "system_disk_size": {
+    "description": "The system disk size used to launch one or more ecs instances.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个ECS实例的系统盘大小。",
+      "en-US": "The system disk size used to launch one or more ECS instances."
+    },
+    "default": "40"
   }
 }
