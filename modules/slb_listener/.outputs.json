@@ -1,0 +1,9 @@
+{
+  "slb_listener_ids": {
+    "description": "The id of slb listeners",
+    "i18n": {
+      "zh-Hans": "负载均衡监听器的ID",
+      "en-US": "The ID of SLB listeners"
+    }
+  }
+}
