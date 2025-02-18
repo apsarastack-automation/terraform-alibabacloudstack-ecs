@@ -4,16 +4,15 @@ variable "name" {
   default     = "iac-tf-ecs-instance"
 }
 
+variable "availability_zone" {
+  description = "The available zone to launch ecs instance and other resources."
+  default     = ""
+}
+
 variable "description" {
   description = "The specification of module description."
   type        = string
   default     = "tf-ecs-instance-description"
-}
-
-variable "cidr_block" {
-  description = "The cidr block used to launch a new vpc."
-  type        = string
-  default     = "172.17.3.0/24"
 }
 
 variable "image_id" {
@@ -31,7 +30,7 @@ variable "image_name_regex" {
 variable "instance_type" {
   description = "The instance type used to launch one or more ecs instances."
   type        = string
-  default     = "ecs.n4.large"
+  default     = ""
 }
 
 variable "host_name" {
@@ -70,38 +69,8 @@ variable "system_disk_size" {
   default     = 40
 }
 
-variable "private_ip" {
-  description = "Configure Instance private IP address."
-  type        = string
-  default     = ""
-}
-
-variable "internet_max_bandwidth_out" {
-  description = "The maximum internet out bandwidth of instance."
-  type        = number
-  default     = 10
-}
-
-variable "associate_public_ip_address" {
-  description = "Whether to associate a public ip address with an instance in a VPC."
-  type        = bool
-  default     = false
-}
-
-variable "instance_charge_type" {
-  description = "The charge type of instance. Choices are 'PostPaid' and 'PrePaid'."
-  type        = string
-  default     = "PostPaid"
-}
-
 variable "user_data" {
   description = "User data to pass to instance on boot."
-  type        = string
-  default     = ""
-}
-
-variable "role_name" {
-  description = "Instance RAM role name. The name is provided and maintained by RAM. You can use 'alibabacloudstack_ram_role' to create a new one."
   type        = string
   default     = ""
 }
@@ -116,22 +85,4 @@ variable "security_enhancement_strategy" {
   description = "The security enhancement strategy."
   type        = string
   default     = "Active"
-}
-
-variable "subscription" {
-  description = "A mapping of fields for Prepaid ECS instances created. "
-  type        = map(string)
-  default = {
-    period             = 1
-    period_unit        = "Month"
-    renewal_status     = "Normal"
-    auto_renew_period  = 1
-    include_data_disks = true
-  }
-}
-
-variable "tags" {
-  description = "A mapping of tags to assign to the resource."
-  type        = map(string)
-  default     = {}
 }

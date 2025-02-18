@@ -47,7 +47,7 @@
       "zh-Hans": "用于启动一个或多个 ECS 实例的实例类型。",
       "en-US": "The instance type used to launch one or more ECS instances."
     },
-    "default": "ecs.n4.large"
+    "default": ""
   },
   "host_name": {
     "description": "Host name used on all instances as prefix. Like if the value is TF-ECS-Host-Name and then the final host name would be TF-ECS-Host-Name001, TF-ECS-Host-Name002 and so on.",
@@ -218,5 +218,15 @@
       "en-US": "The regex string used to search for launching one or more ECS instances."
     },
     "default": "^ubuntu_"
+  },
+  "availability_zone": {
+    "description": "The available zone to launch ecs instance and other resources.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "可用区用于启动ECS实例和其他资源。",
+      "en-US": "The available zone to launch ECS instance and other resources."
+    },
+    "default": ""
   }
 }
