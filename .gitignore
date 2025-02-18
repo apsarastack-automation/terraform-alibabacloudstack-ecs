@@ -1,0 +1,10 @@
+/.project
+/.settings
+
+
+**/.DS_Store
+
+
+**/.terraform
+**/.terraform.lock.hcl
+**/*.tfstate
