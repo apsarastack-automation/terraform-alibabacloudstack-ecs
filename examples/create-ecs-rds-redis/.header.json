@@ -1,0 +1,14 @@
+{
+  "title": {
+    "zh-Hans": "Terraform 部署 ECS 实例、RDS 数据库和 Redis 实例",
+    "en-US": "Terraform deploys ECS instances, RDS databases, and Redis instances"
+  },
+  "overview": {
+    "zh-Hans": "该 Terraform 脚本用于在阿里云上部署一个 ECS 实例集群、一个 RDS 数据库实例和一个 Redis 实例。它通过模块化的方式配置 ECS 实例，并根据提供的变量创建相应的数据库和缓存服务。",
+    "en-US": "This Terraform script is used to deploy a cluster of ECS instances, an RDS database instance, and a Redis instance on Alibaba Cloud. It configures the ECS instances in a modular way and creates the corresponding database and cache services based on the provided variables."
+  },
+  "description": {
+    "zh-Hans": "该 Terraform 脚本的主要功能如下：\n\n1. **获取可用区信息**：使用 `data \"alibabacloudstack_zones\"` 获取支持创建 RDS 实例的可用区信息，并启用详细信息。\n\n2. **部署 ECS 实例集群**：通过调用自定义模块 `ecs_instance_cluster`，根据传入的变量配置和创建一个或多个 ECS 实例。这些变量包括实例名称、主机名、描述、密码、磁盘大小、可用区、镜像 ID 等。\n\n3. **创建 RDS 数据库实例**：使用 `resource \"alibabacloudstack_db_instance\"` 创建一个 RDS 数据库实例。配置项包括数据库实例描述、虚拟交换机 ID、存储类型、引擎版本、实例规格、存储容量等。数据库实例的存储类型会根据用户提供的变量进行选择，默认情况下会选择第一个可用的磁盘类别。\n\n4. **创建 Redis 实例**：使用 `resource \"alibabacloudstack_kvstore_instance\"` 创建一个 Redis 实例。配置项包括虚拟交换机 ID、安全 IP 列表、实例类型、引擎版本、可用区、实例规格等。Redis 实例的可用区会优先使用用户提供的值，否则默认选择第一个可用区。\n\n此脚本适用于需要快速部署包含计算、数据库和缓存服务的完整应用环境的场景。",
+    "en-US": "The main functions of this Terraform script are as follows:\n\n1. **Retrieve Availability Zone Information**: Use `data \"alibabacloudstack_zones\"` to obtain information about the availability zones that support creating RDS instances, with detailed information enabled.\n\n2. **Deploy ECS Instance Cluster**: By invoking the custom module `ecs_instance_cluster`, configure and create one or more ECS instances based on the provided variables. These variables include instance name, hostname, description, password, disk size, availability zone, image ID, etc.\n\n3. **Create RDS Database Instance**: Use `resource \"alibabacloudstack_db_instance\"` to create an RDS database instance. Configuration options include database instance description, virtual switch ID, storage type, engine version, instance specification, storage capacity, etc. The storage type for the database instance will be selected based on user-provided variables, defaulting to the first available disk category if not specified.\n\n4. **Create Redis Instance**: Use `resource \"alibabacloudstack_kvstore_instance\"` to create a Redis instance. Configuration options include virtual switch ID, security IP list, instance type, engine version, availability zone, instance specification, etc. The availability zone for the Redis instance will prioritize the user-provided value; otherwise, it defaults to the first available zone.\n\nThis script is suitable for scenarios where a complete application environment, including computing, database, and caching services, needs to be deployed quickly."
+  }
+}
