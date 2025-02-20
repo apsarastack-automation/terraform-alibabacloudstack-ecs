@@ -1,0 +1,23 @@
+{
+  "ecs_id": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "rds_id": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  },
+  "vswitch_id": {
+    "description": "",
+    "i18n": {
+      "zh-Hans": "",
+      "en-US": ""
+    }
+  }
+}

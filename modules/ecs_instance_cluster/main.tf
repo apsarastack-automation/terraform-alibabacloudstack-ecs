@@ -64,7 +64,7 @@ resource "alibabacloudstack_security_group" "default" {
 
 resource "alibabacloudstack_instance" "default" {
   count                         = var.cluster_size
-  image_id                      = var.image_id == "" ? length(data.alibabacloudstack_images.default.images) > 0 ? data.alibabacloudstack_images.default.images[0].id : "ubuntu_18_04_64_20G_alibase_20190624.vhd" : var.image_id
+  image_id                      = var.image_id == "" ? data.alibabacloudstack_images.default.images[0].id : var.image_id
   instance_type                 = var.instance_type == "" ? data.alibabacloudstack_instance_types.default.instance_types[0].id : var.instance_type
   security_groups               = length(var.security_group_ids) > 0 ? var.security_group_ids : [alibabacloudstack_security_group.default[0].id]
   instance_name                 = var.cluster_size < 2 ? var.name : format("%s-%s", var.name, count.index + 1)

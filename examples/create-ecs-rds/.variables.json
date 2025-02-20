@@ -1,0 +1,222 @@
+{
+  "name": {
+    "description": "The specification of module name.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "模块名称的规范。",
+      "en-US": "The specification of module name."
+    },
+    "default": "iac-tf-ecs-instance"
+  },
+  "availability_zone": {
+    "description": "The available zone to launch ecs instance and other resources.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "可用区用于启动ECS实例和其他资源。",
+      "en-US": "The available zone to launch ECS instance and other resources."
+    },
+    "default": ""
+  },
+  "description": {
+    "description": "The specification of module description.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "模块描述的规范。",
+      "en-US": "The specification of module description."
+    },
+    "default": "tf-ecs-instance-description"
+  },
+  "image_id": {
+    "description": "The image id used to launch one or more ecs instances.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个ECS实例的镜像ID。",
+      "en-US": "The image id used to launch one or more ECS instances."
+    },
+    "default": ""
+  },
+  "image_name_regex": {
+    "description": "The regex string used to search image launch one or more ecs instances.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于搜索图像以启动一个或多个 ECS 实例的正则表达式字符串。",
+      "en-US": "The regex string used to search for launching one or more ECS instances."
+    },
+    "default": "^ubuntu_"
+  },
+  "instance_type": {
+    "description": "The instance type used to launch one or more ecs instances.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个ECS实例的实例类型。",
+      "en-US": "The instance type used to launch one or more ECS instances."
+    },
+    "default": ""
+  },
+  "host_name": {
+    "description": "Host name used on all instances as prefix. Like if the value is TF-ECS-Host-Name and then the final host name would be TF-ECS-Host-Name001, TF-ECS-Host-Name002 and so on.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "在所有实例中用作前缀的主机名。例如，如果值是TF-ECS-Host-Name，那么最终的主机名将是TF-ECS-Host-Name001、TF-ECS-Host-Name002，依此类推。",
+      "en-US": "Host name used on all instances as prefix. Like if the value is TF-ECS-Host-Name and then the final host name would be TF-ECS-Host-Name001, TF-ECS-Host-Name002 and so on."
+    },
+    "default": "iac-tf-ecs-instance-host"
+  },
+  "engine": {
+    "description": "The specification of the engine.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "发动机的规格。",
+      "en-US": "The specification of the engine."
+    },
+    "default": "MySQL"
+  },
+  "engine_version": {
+    "description": "The specification of the engine version.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "数据库引擎版本。",
+      "en-US": "The specification of the engine version."
+    },
+    "default": "5.7"
+  },
+  "rds_instance_type": {
+    "description": "The specification of the rds instance type.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "RDS实例类型的规格。",
+      "en-US": "The specification of the RDS instance type."
+    },
+    "default": "rds.mysql.t1.small"
+  },
+  "instance_storage": {
+    "description": "The specification of the instance storage.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "实例存储的规格。",
+      "en-US": "The specification of the instance storage."
+    },
+    "default": "30"
+  },
+  "instance_charge_type": {
+    "description": "The specification of the instance charge type.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "实例收费类型的规格。",
+      "en-US": "The specification of the instance charge type."
+    },
+    "default": "Postpaid"
+  },
+  "monitoring_period": {
+    "description": "The specification of the monitoring period.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "监控周期的规格。",
+      "en-US": "The specification of the monitoring period."
+    },
+    "default": "60"
+  },
+  "rds_disk_category": {
+    "description": "The specification of the database disk category.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "数据库磁盘类别的规格。",
+      "en-US": "The specification of the database disk category."
+    },
+    "default": ""
+  },
+  "password": {
+    "description": "The password of instance.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "实例的密码。",
+      "en-US": "The password of instance."
+    },
+    "default": "YourPassword123"
+  },
+  "kms_encrypted_password": {
+    "description": "An KMS encrypts password used to an instance. It is conflicted with 'password'.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "An KMS加密了用于实例的密码。它与'password'冲突。",
+      "en-US": "An KMS encrypts password used for an instance. It conflicts with 'password'."
+    },
+    "default": ""
+  },
+  "kms_encryption_context": {
+    "description": "An KMS encryption context used to decrypt 'kms_encrypted_password' before creating or updating an instance with 'kms_encrypted_password'.",
+    "type": "map(string)",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于在创建或更新实例之前解密'kms_encrypted_password'的KMS加密上下文。",
+      "en-US": "An KMS encryption context used to decrypt 'kms_encrypted_password' before creating or updating an instance with 'kms_encrypted_password'."
+    },
+    "default": "{}"
+  },
+  "system_disk_size": {
+    "description": "The system disk size used to launch one or more ecs instances.",
+    "type": "number",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个ECS实例的系统盘大小。",
+      "en-US": "The system disk size used to launch one or more ECS instances."
+    },
+    "default": "40"
+  },
+  "user_data": {
+    "description": "User data to pass to instance on boot.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "引导时传递给实例的用户数据。",
+      "en-US": "User data to pass to instance on boot."
+    },
+    "default": ""
+  },
+  "key_name": {
+    "description": "The name of SSH key pair that can login ECS instance successfully without password. If it is specified, the password would be invalid.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "可以成功免密登录ECS实例的SSH密钥对名称。如果指定了此参数，则密码将无效。",
+      "en-US": "The name of the SSH key pair that can log into the ECS instance successfully without a password. If it is specified, the password will be invalid."
+    },
+    "default": ""
+  },
+  "security_enhancement_strategy": {
+    "description": "The security enhancement strategy.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "安全增强策略。",
+      "en-US": "The security enhancement strategy."
+    },
+    "default": "Active"
+  },
+  "disk_category": {
+    "description": "The specification of the disk category.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "磁盘类别的规格。",
+      "en-US": "The specification of the disk category."
+    },
+    "default": ""
+  }
+}
