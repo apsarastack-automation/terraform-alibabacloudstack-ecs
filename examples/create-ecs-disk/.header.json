@@ -1,0 +1,14 @@
+{
+  "title": {
+    "zh-Hans": "ECS磁盘资源模块配置",
+    "en-US": "ECS Disk Resource Module Configuration"
+  },
+  "overview": {
+    "zh-Hans": "此Terraform模块配置用于创建和管理ECS磁盘资源。",
+    "en-US": "This Terraform module configuration is used to create and manage ECS disk resources."
+  },
+  "description": {
+    "zh-Hans": "此代码段定义了一个名为“disk”的Terraform模块，该模块用于创建和管理ECS（弹性云服务器）磁盘资源。模块的源路径为\"../../modules/disk\"，并且传递了两个变量：name和category。这些变量将用于模块内部配置磁盘资源的具体参数。\n\n- **source**: 指定模块的来源路径，这里是相对路径\"../../modules/disk\"。\n- **name**: 通过变量var.name传递，用于指定磁盘资源的名称。\n- **category**: 通过变量var.category传递，用于指定磁盘资源的类别。\n\n此配置使得用户可以通过简单的变量设置来复用和管理ECS磁盘资源，提高了代码的可维护性和灵活性。",
+    "en-US": "This code snippet defines a Terraform module named \"disk\" that is used to create and manage ECS (Elastic Cloud Server) disk resources. The module's source path is \"../../modules/disk\", and it passes two variables: name and category. These variables are used within the module to configure specific parameters of the disk resource.\n\n- **source**: Specifies the source path of the module, which is the relative path \"../../modules/disk\".\n- **name**: Passed through the variable var.name, used to specify the name of the disk resource.\n- **category**: Passed through the variable var.category, used to specify the category of the disk resource.\n\nThis configuration allows users to reuse and manage ECS disk resources through simple variable settings, enhancing the maintainability and flexibility of the code."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": {
+    "description": "Name used on all disks as prefix. Like TF_ECS_Disk-1, TF_ECS_Disk-2.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "在所有磁盘上使用的名称作为前缀。例如 TF_ECS_Disk-1, TF_ECS_Disk-2。",
+      "en-US": "Name used on all disks as prefix. Like TF_ECS_Disk-1, TF_ECS_Disk-2."
+    },
+    "default": "TF_ECS_Disk"
+  },
+  "category": {
+    "description": "The data disk category used to launch one or more data disks.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个数据磁盘的数据磁盘类别。",
+      "en-US": "The data disk category used to launch one or more data disks."
+    },
+    "default": "cloud_pperf"
+  },
+  "size": {
+    "description": "The data disk size used to launch one or more data disks.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个数据磁盘的数据磁盘大小。",
+      "en-US": "The data disk size used to launch one or more data disks."
+    },
+    "default": "40"
+  },
+  "tags": {
+    "description": "Used to mark specified ecs data disks. Name will be merged into tags automactially.",
+    "type": "map(string)",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于标记指定的ECS数据盘。名称将自动合并到标签中。",
+      "en-US": "Used to mark specified ECS data disks. Name will be merged into tags automatically."
+    },
+    "default": "{\n    created_by   = \"Terraform\"\n    created_from = \"module-terraform-alicloud-disk\"\n  }"
+  },
+  "encrypted": {
+    "description": "Whether to encrypt the disks",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "是否加密磁盘",
+      "en-US": "Whether to encrypt the disks"
+    },
+    "default": "false"
+  },
+  "disk_count": {
+    "description": "Number of disks to launch.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "要启动的磁盘数量。",
+      "en-US": "Number of disks to launch."
+    },
+    "default": "1"
+  }
+}

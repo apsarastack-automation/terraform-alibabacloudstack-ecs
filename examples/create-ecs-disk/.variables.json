@@ -1,0 +1,22 @@
+{
+  "name": {
+    "description": "Name used on all disks as prefix. Like TF_ECS_Disk-1, TF_ECS_Disk-2.",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "在所有磁盘上使用的名称作为前缀。例如 TF_ECS_Disk-1，TF_ECS_Disk-2。",
+      "en-US": "Name used on all disks as prefix. Like TF_ECS_Disk-1, TF_ECS_Disk-2."
+    },
+    "default": "TF_ECS_Disk"
+  },
+  "category": {
+    "description": "The data disk category used to launch one or more data disks.such as cloud_efficiency,cloud_pperf",
+    "type": "string",
+    "optional": true,
+    "i18n": {
+      "zh-Hans": "用于启动一个或多个数据盘的数据盘类别，例如cloud_efficiency、cloud_pperf",
+      "en-US": "The data disk category used to launch one or more data disks, such as cloud_efficiency, cloud_pperf"
+    },
+    "default": "cloud_pperf"
+  }
+}
