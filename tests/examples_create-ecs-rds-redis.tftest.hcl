@@ -1,7 +1,7 @@
 run "validate" {
   command = apply
   module {
-    source = "../examples/create-ecs-rds-redis"
+    source = "./examples/create-ecs-rds-redis"
   }
   variables {
     # name = 

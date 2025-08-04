@@ -1,7 +1,7 @@
 run "validate" {
   command = apply
   module {
-    source = "../examples/create-simple-ecs-instance"
+    source = "./examples/create-simple-ecs-instance"
   }
   variables {
     # name = 
