@@ -1,9 +1,9 @@
-module "desult" {
+module "default" {
   source = "./modules/ecs_instance_cluster"
-  #variable "name" = "terraform-apsara-ecs-cluster"
-  #variable "image_name_regex" = "^ubuntu_18.*_64"
-  #variable "cpu_core_count" = 2
-  #variable "memory_size" = 4
-  #variable "system_disk_size" = 40
-  #variable "cluster_size"= 3
+  name = var.name
+  image_name_regex = var.image_name_regex
+  cpu_core_count = var.cpu_core_count
+  memory_size = var.memory_size
+  system_disk_size = var.system_disk_size
+  cluster_size= var.cluster_size
 }
