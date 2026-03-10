@@ -3,7 +3,6 @@
 data "alibabacloudstack_images" "default" {
   most_recent = true
   owners      = "system"
-  name_regex  = var.image_name_regex
 }
 
 

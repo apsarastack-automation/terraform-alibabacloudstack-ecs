@@ -4,6 +4,13 @@ data "alibabacloudstack_zones" "default" {
   enable_details              = true
 }
 
+data "alibabacloudstack_rds_instance_types" "default" {
+  engine               = var.engine
+  sorted_by            = "CPU"
+  engine_version       = var.engine_version
+  series               = "dual_ha"
+}
+
 
 
 module "ecs" {
@@ -30,13 +37,14 @@ module "ecs" {
 resource "alibabacloudstack_db_instance" "default" {
   db_instance_description  = var.name
   vswitch_id               = module.ecs.vswitch_id
-  db_instance_storage_type = length(var.rds_disk_category) > 0 ? var.rds_disk_category : length(var.disk_category) > 0 ? var.disk_category : data.alibabacloudstack_zones.default.zones.0.available_disk_categories.0
+  db_instance_storage_type = length(var.rds_disk_category) > 0 ? var.rds_disk_category : length(var.disk_category) > 0 ? var.disk_category : data.alibabacloudstack_rds_instance_types.default.instance_types.0.storage_type
   engine                   = var.engine
   engine_version           = var.engine_version
-  db_instance_class        = var.rds_instance_type
-  db_instance_storage      = var.instance_storage
-  payment_type             = var.instance_charge_type
+  db_instance_class        = data.alibabacloudstack_rds_instance_types.default.instance_types.0.id
+  db_instance_storage      = data.alibabacloudstack_rds_instance_types.default.instance_types.0.storage_min
+  instance_charge_type     = var.instance_charge_type
   monitoring_period        = var.monitoring_period
+  cpu_type             = data.alibabacloudstack_rds_instance_types.default.instance_types.0.cpu_type
 }
 
 
