@@ -4,32 +4,32 @@ output "ids" {
 }
 
 output "availability_zone" {
-  value = alibabacloudstack_instance.default.0.availability_zone
+  value = alibabacloudstack_instance.default[*].availability_zone
 }
 
 output "vswitch_id" {
-  value = alibabacloudstack_instance.default.0.vswitch_id
+  value = alibabacloudstack_instance.default[*].vswitch_id
 }
 
 output "security_group_ids" {
-  value = alibabacloudstack_instance.default.0.security_groups
+  value = alibabacloudstack_instance.default[*].security_groups
 }
 
 # Key pair outputs
 output "key_name" {
-  value = alibabacloudstack_instance.default.0.key_name
+  value = alibabacloudstack_instance.default[*].key_name
 }
 
 output "image_id" {
-  value = alibabacloudstack_instance.default.0.image_id
+  value = alibabacloudstack_instance.default[*].image_id
 }
 
 output "instance_type" {
-  value = alibabacloudstack_instance.default.0.instance_type
+  value = alibabacloudstack_instance.default[*].instance_type
 }
 
 output "private_ips" {
-  value = alibabacloudstack_instance.default.0.private_ip
+  value = alibabacloudstack_instance.default[*].private_ip
 }
 
 output "disk_category" {
