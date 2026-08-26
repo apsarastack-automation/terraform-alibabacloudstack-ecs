@@ -123,7 +123,7 @@ variable "instance_tags" {
 
 variable "cluster_size" {
   description = "The number of ECS instances."
-  default     = 3
+  default     = 1
 }
 
 variable "user_data" {

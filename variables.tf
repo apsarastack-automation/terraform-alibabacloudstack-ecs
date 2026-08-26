@@ -27,5 +27,5 @@ variable "system_disk_size" {
 
 variable "cluster_size" {
   description = "The number of ECS instances."
-  default     = 3
+  default     = 1
 }
