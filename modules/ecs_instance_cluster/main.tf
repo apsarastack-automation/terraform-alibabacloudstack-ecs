@@ -1,5 +1,6 @@
 
 // Images data source for image_id
+# most_recent=true makes images[0] deterministic; no check block needed
 data "alibabacloudstack_images" "default" {
   most_recent = true
   owners      = "system"
