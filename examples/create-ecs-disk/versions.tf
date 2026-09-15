@@ -4,7 +4,7 @@ terraform {
   required_providers {
     alibabacloudstack = {
       source = "aliyun/alibabacloudstack"
-      #version = ">= 4.64, < 7"
+      version = ">= 3.18.28, < 3.19.0"
     }
   }
 }
