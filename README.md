@@ -21,8 +21,6 @@ module "web_cluster" {
   cpu_core_count   = 4
   memory_size      = 8
   system_disk_size = 50
-  
-  image_name_regex = "^centos_7_04_64_20G_alibase"
 }
 ```
 
@@ -35,7 +33,6 @@ module "web_cluster" {
 | `cpu_core_count` | number | `2` | vCPU cores per instance |
 | `memory_size` | number | `4` | Memory size per instance (GB) |
 | `system_disk_size` | number | `40` | System disk capacity (GB) |
-| `image_name_regex` | string | `"^ubuntu_18.*_64"` | Regex pattern for OS image names |
 
 ### Resource Architecture
 1. **VPC Network** (`alibabacloudstack_vpc.default`)  

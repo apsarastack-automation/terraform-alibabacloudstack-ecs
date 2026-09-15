@@ -20,24 +20,14 @@
     "default": ""
   },
   "image_id": {
-    "description": "The image id used to launch ecs instances. If not set, a system image with `image_name_regex` will be returned.",
+    "description": "The image id used to launch ecs instances. If not set, the most recent system image will be returned.",
     "type": "string",
     "optional": true,
     "i18n": {
-      "zh-Hans": "用于启动ECS实例的镜像ID。如果没有设置，则返回带有`image_name_regex`的系统镜像。",
-      "en-US": "The image id used to launch ECS instances. If not set, a system image with `image_name_regex` will be returned."
+      "zh-Hans": "用于启动ECS实例的镜像ID。如果没有设置，则返回最新的系统镜像。",
+      "en-US": "The image id used to launch ECS instances. If not set, the most recent system image will be returned."
     },
     "default": ""
-  },
-  "image_name_regex": {
-    "description": "The ECS image's name regex used to fetch specified image.",
-    "type": "string",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "用于获取指定镜像的ECS镜像名称正则表达式。",
-      "en-US": "The ECS image's name regex used to fetch specified image."
-    },
-    "default": "^ubuntu_18.*_64"
   },
   "instance_type": {
     "description": "The instance type used to launch ecs instances. If not set, a random type with `cpu_core_count` and `memory_size` will be returned.",

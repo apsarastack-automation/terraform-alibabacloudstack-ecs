@@ -39,16 +39,6 @@
     },
     "default": ""
   },
-  "image_name_regex": {
-    "description": "The regex string used to search image launch one or more ecs instances.",
-    "type": "string",
-    "optional": true,
-    "i18n": {
-      "zh-Hans": "用于搜索图像以启动一个或多个 ECS 实例的正则表达式字符串。",
-      "en-US": "The regex string used to search for launching one or more ECS instances."
-    },
-    "default": "^ubuntu_.*"
-  },
   "instance_type": {
     "description": "The instance type used to launch one or more ecs instances.",
     "type": "string",

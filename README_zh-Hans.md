@@ -22,9 +22,6 @@ module "web_cluster" {
   cpu_core_count   = 4
   memory_size      = 8
   system_disk_size = 50
-  
-  # 镜像配置
-  image_name_regex = "^centos_7_04_64_20G_alibase"
 }
 ```
 
@@ -35,7 +32,6 @@ module "web_cluster" {
 | cpu_core_count | number | 2 | 每实例vCPU核数 |
 | memory_size | number | 4 | 每实例内存大小(GB) |
 | system_disk_size | number | 40 | 系统盘容量(GB) |
-| image_name_regex | string | "^ubuntu_18.*_64" | 操作系统镜像名称正则表达式 |
 
 ### 资源架构
 1. VPC网络 (alibabacloudstack_vpc.default)

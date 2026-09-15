@@ -26,7 +26,6 @@ module "ecs" {
   disk_category                 = var.disk_category
   availability_zone             = var.availability_zone
   image_id                      = var.image_id
-  image_name_regex              = var.image_name_regex
   instance_type                 = var.instance_type
   user_data                     = var.user_data
   key_name                      = var.key_name

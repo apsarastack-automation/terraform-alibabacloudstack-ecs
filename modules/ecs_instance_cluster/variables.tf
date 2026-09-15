@@ -9,7 +9,7 @@ variable "availability_zone" {
 
 # Image variables
 variable "image_id" {
-  description = "The image id used to launch ecs instances. If not set, a system image with `image_name_regex` will be returned."
+  description = "The image id used to launch ecs instances. If not set, the most recent system image will be returned."
   default     = ""
 }
 
@@ -17,11 +17,6 @@ variable "description" {
   description = "The specification of module description."
   type        = string
   default     = "tf-ecs-instance-description"
-}
-
-variable "image_name_regex" {
-  description = "The ECS image's name regex used to fetch specified image."
-  default     = "^ubuntu_18.*_64"
 }
 
 variable "vpc_id" {

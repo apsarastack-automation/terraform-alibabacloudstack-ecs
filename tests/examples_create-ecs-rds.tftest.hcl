@@ -8,7 +8,6 @@ run "validate" {
     # availability_zone = 
     # description = 
     # image_id = 
-    # image_name_regex = 
     # instance_type = 
     # disk_category = 
     # host_name = 

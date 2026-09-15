@@ -21,12 +21,6 @@ variable "image_id" {
   default     = ""
 }
 
-variable "image_name_regex" {
-  description = "The regex string used to search image launch one or more ecs instances."
-  type        = string
-  default     = "^ubuntu_"
-}
-
 variable "instance_type" {
   description = "The instance type used to launch one or more ecs instances."
   type        = string

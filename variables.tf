@@ -3,11 +3,6 @@ variable "name" {
 }
 
 
-variable "image_name_regex" {
-  description = "The ECS image's name regex used to fetch specified image."
-  default     = "^ubuntu_18.*_64"
-}
-
 
 variable "cpu_core_count" {
   description = "CPU core count used to fetch instance types."
