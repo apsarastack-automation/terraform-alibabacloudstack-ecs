@@ -47,7 +47,7 @@
       "zh-Hans": "用于搜索图像以启动一个或多个 ECS 实例的正则表达式字符串。",
       "en-US": "The regex string used to search for launching one or more ECS instances."
     },
-    "default": "^ubuntu_"
+    "default": "^ubuntu_.*"
   },
   "instance_type": {
     "description": "The instance type used to launch one or more ecs instances.",

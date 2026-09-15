@@ -29,7 +29,7 @@ resource "alibabacloudstack_disk_attachment" "default" {
 
 
 resource "alibabacloudstack_disk" "default" {
-  zone_id  = module.ecs-cluster.availability_zone
+  zone_id  = module.ecs-cluster.availability_zone[0]
   size     = 20
   category = module.ecs-cluster.disk_category
 }

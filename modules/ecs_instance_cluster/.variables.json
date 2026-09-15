@@ -127,7 +127,7 @@
       "zh-Hans": "ECS实例的数量。",
       "en-US": "The number of ECS instances."
     },
-    "default": "3"
+    "default": "1"
   },
   "user_data": {
     "description": "User data to pass to instance on boot",
