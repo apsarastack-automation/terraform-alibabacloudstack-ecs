@@ -36,7 +36,7 @@ module "ecs" {
 
 resource "alibabacloudstack_db_instance" "default" {
   db_instance_description  = var.name
-  vswitch_id               = module.ecs.vswitch_id
+  vswitch_id               = module.ecs.vswitch_id[0]
   db_instance_storage_type = length(var.rds_disk_category) > 0 ? var.rds_disk_category : length(var.disk_category) > 0 ? var.disk_category : data.alibabacloudstack_rds_instance_types.default.instance_types.0.storage_type
   engine                   = var.engine
   engine_version           = var.engine_version
@@ -50,7 +50,7 @@ resource "alibabacloudstack_db_instance" "default" {
 
 
 resource "alibabacloudstack_kvstore_instance" "default" {
-  vswitch_id     = module.ecs.vswitch_id
+  vswitch_id     = module.ecs.vswitch_id[0]
   security_ips   = var.security_ips
   instance_type  = var.redis_instance_type
   engine_version = var.redis_engine_version

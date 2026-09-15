@@ -25,8 +25,9 @@ data "alibabacloudstack_zones" "default" {
 
 
 data "alibabacloudstack_vswitches" "default" {
+  count   = length(var.vswtich_id) > 0 ? 1 : 0
   zone_id = data.alibabacloudstack_zones.default.zones.0.id
-  ids     = length(var.vswtich_id) > 0 ? [var.vswtich_id] : []
+  ids     = [var.vswtich_id]
 }
 
 
